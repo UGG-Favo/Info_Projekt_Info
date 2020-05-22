@@ -75,19 +75,19 @@ public class Main extends JFrame { //Wir haben unser Canvas in einem JFrame
         // diese auf die Variable bs.
 
         try {                                                                       // Versuche
-            e0_left = ImageIO.read(new File("./images/images/pic1/e0 left.png"));
-            e0_bottom = ImageIO.read(new File("./images/images/pic1/e0 bottom.png"));
-            e0_right = ImageIO.read(new File("./images/images/pic1/e0 right.png"));
-            e0_top = ImageIO.read(new File("./images/images/pic1/e0 top.png"));
-            e1_left = ImageIO.read(new File("./images/images/pic1/e1 left.png"));
-            e1_bottom = ImageIO.read(new File("./images/images/pic1/e1 bottom.png"));
-            e1_right = ImageIO.read(new File("./images/images/pic1/e1 right.png"));
-            e1_top = ImageIO.read(new File("./images/images/pic1/e1 top.png"));
-            e2_left = ImageIO.read(new File("./images/images/pic1/e2 left.png"));
-            e2_bottom = ImageIO.read(new File("./images/images/pic1/e2 bottom.png"));
-            e2_right = ImageIO.read(new File("./images/images/pic1/e2 right.png"));
-            e2_top = ImageIO.read(new File("./images/images/pic1/e2 top.png"));
-            e2_front  = ImageIO.read(new File("./images/images/pic1/e2 front.png"));
+            e0_left = ImageIO.read(new File("./images/fertige_bilder/e0_left.png"));
+            e0_bottom = ImageIO.read(new File("./images/fertige_bilder/e0_bottom.png"));
+            e0_right = ImageIO.read(new File("./images/fertige_bilder/e0_right.png"));
+            e0_top = ImageIO.read(new File("./images/fertige_bilder/e0_top.png"));
+            e1_left = ImageIO.read(new File("./images/fertige_bilder/e1_left.png"));
+            e1_bottom = ImageIO.read(new File("./images/fertige_bilder/e1_bottom.png"));
+            e1_right = ImageIO.read(new File("./images/fertige_bilder/e1_right.png"));
+            e1_top = ImageIO.read(new File("./images/fertige_bilder/e1_top.png"));
+            e2_left = ImageIO.read(new File("./images/fertige_bilder/e2_left.png"));
+            e2_bottom = ImageIO.read(new File("./images/fertige_bilder/e2_bottom.png"));
+            e2_right = ImageIO.read(new File("./images/fertige_bilder/e2_right.png"));
+            e2_top = ImageIO.read(new File("./images/fertige_bilder/e2_top.png"));
+            e2_front  = ImageIO.read(new File("./images/fertige_bilder/e2_front.png"));
         } catch(Exception e) {                                                      // Wenn es dabei einen Fehler gibt
             e.printStackTrace();                                                      // Gebe einen Fehler aus. Das try
         }                                                                           //verhindert dabei, dass unser Java-Programm dabei abstürzt.
