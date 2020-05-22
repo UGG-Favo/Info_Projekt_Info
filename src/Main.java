@@ -83,11 +83,11 @@ public class Main extends JFrame { //Wir haben unser Canvas in einem JFrame
             e1_bottom = ImageIO.read(new File("./images/fertige_bilder/e1_bottom.png"));
             e1_right = ImageIO.read(new File("./images/fertige_bilder/e1_right.png"));
             e1_top = ImageIO.read(new File("./images/fertige_bilder/e1_top.png"));
-            e2_left = ImageIO.read(new File("./images/fertige_bilder/e2_left.png"));
+            /*e2_left = ImageIO.read(new File("./images/fertige_bilder/e2_left.png"));
             e2_bottom = ImageIO.read(new File("./images/fertige_bilder/e2_bottom.png"));
             e2_right = ImageIO.read(new File("./images/fertige_bilder/e2_right.png"));
             e2_top = ImageIO.read(new File("./images/fertige_bilder/e2_top.png"));
-            e2_front  = ImageIO.read(new File("./images/fertige_bilder/e2_front.png"));
+            e2_front  = ImageIO.read(new File("./images/fertige_bilder/e2_front.png"));*/
         } catch(Exception e) {                                                      // Wenn es dabei einen Fehler gibt
             e.printStackTrace();                                                      // Gebe einen Fehler aus. Das try
         }                                                                           //verhindert dabei, dass unser Java-Programm dabei abstürzt.
@@ -105,7 +105,7 @@ public class Main extends JFrame { //Wir haben unser Canvas in einem JFrame
     // Anfang Methoden
 
     public static void main(String[] args) {
-        new Main("EinBischenCanvas");                                   // Legt ein Objekt von sicher selber an,
+        new Main("The Game");                                   // Legt ein Objekt von sicher selber an,
         //also ein sichtbares Fenster
         //public itm1 =new Item;
 
@@ -135,10 +135,10 @@ public class Main extends JFrame { //Wir haben unser Canvas in einem JFrame
         bs.getDrawGraphics().drawImage(e1_bottom,320,450,640,90,null);
         bs.getDrawGraphics().drawImage(e1_right,780,180,180,360,null);
         bs.getDrawGraphics().drawImage(e1_top,320,180,640,90,null);
-        bs.getDrawGraphics().drawImage(e2_left,480,270,61,180,null);
+        /*bs.getDrawGraphics().drawImage(e2_left,480,270,61,180,null);
         bs.getDrawGraphics().drawImage(e2_bottom,480,415,320,35,null);
         bs.getDrawGraphics().drawImage(e2_right,739,270,61,180,null);
-        bs.getDrawGraphics().drawImage(e2_top,480,270,320,35,null);
+        bs.getDrawGraphics().drawImage(e2_top,480,270,320,35,null);*/
         //bs.getDrawGraphics().drawImage(e2_front,541,305,320,180,null);
         //Zeigt das gezeichnette an. Das ist der Trick vom DoubleBuffer, man zeichnet erst alles auf ein
         //unsichtbares Canvas und macht es dann auf einen Schlag sichtbar.
