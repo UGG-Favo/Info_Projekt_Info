@@ -155,5 +155,5 @@ public class Main extends JFrame { //Wir haben unser Canvas in einem JFrame
 
     }
 
-} // end of class EinBischenCanvas
+} // end of class Main
 
