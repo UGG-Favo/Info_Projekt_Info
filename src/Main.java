@@ -36,6 +36,8 @@ public class Main extends JFrame { //Wir haben unser Canvas in einem JFrame
     private BufferedImage e2_right;
     private BufferedImage e2_top;
     private BufferedImage e2_front;
+    
+    private Map map;
                //Wir machen einen Timer, der 25 Mal/Sekunde tickt, um Bilder zu laden.
     // Ende Attribute
 
@@ -43,15 +45,17 @@ public class Main extends JFrame { //Wir haben unser Canvas in einem JFrame
     public Main(String title) {                                       // Konstruktor
         //Das ist alles Standard-JFrame-Zeugs
         super(title);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         int frameWidth = 1280;
         int frameHeight = 720;
+        
         setSize(frameWidth, frameHeight);
+        setResizable(false);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
         int x = (d.width - getSize().width) / 2;
         int y = (d.height - getSize().height) / 2;
         setLocation(x, y);
-        setResizable(false);
+        
         Container cp = getContentPane();
         cp.setLayout(null);
         //Jetzt wirds interessant:
@@ -59,10 +63,7 @@ public class Main extends JFrame { //Wir haben unser Canvas in einem JFrame
         canvas1.setBounds(0, 0, 1280, 720);                         // Canvas auf das Form ziehen erstellt diesen Code
         cp.add(canvas1);
 
-
-
-
-
+        
         setVisible(true);
 
 
@@ -123,24 +124,26 @@ public class Main extends JFrame { //Wir haben unser Canvas in einem JFrame
 
 
     public void render() {
+        Graphics g = bs.getDrawGraphics();
+        
         //Macht die Leinwand leer
-        bs.getDrawGraphics().clearRect(0,0, canvas1.getWidth(), canvas1.getHeight());
+        g.clearRect(0,0, canvas1.getWidth(), canvas1.getHeight());
 
         //Zeichnet Bild
 
-        bs.getDrawGraphics().drawImage(e0_left,0,0,320,720, null);
-        bs.getDrawGraphics().drawImage(e0_bottom,0,540,1280,180, null);
-        bs.getDrawGraphics().drawImage(e0_right,960,0,320,720, null);
-        bs.getDrawGraphics().drawImage(e0_top,0,0,1280,180, null);
-        bs.getDrawGraphics().drawImage(e1_left,320,180,180,360,null);
-        bs.getDrawGraphics().drawImage(e1_bottom,320,450,640,90,null);
-        bs.getDrawGraphics().drawImage(e1_right,780,180,180,360,null);
-        bs.getDrawGraphics().drawImage(e1_top,320,180,640,90,null);
-        /*bs.getDrawGraphics().drawImage(e2_left,480,270,61,180,null);
-        bs.getDrawGraphics().drawImage(e2_bottom,480,415,320,35,null);
-        bs.getDrawGraphics().drawImage(e2_right,739,270,61,180,null);
-        bs.getDrawGraphics().drawImage(e2_top,480,270,320,35,null);*/
-        //bs.getDrawGraphics().drawImage(e2_front,541,305,320,180,null);
+        g.drawImage(e0_left,0,0,320,720, null);
+        g.drawImage(e0_bottom,0,540,1280,180, null);
+        g.drawImage(e0_right,960,0,320,720, null);
+        g.drawImage(e0_top,0,0,1280,180, null);
+        g.drawImage(e1_left,320,180,180,360,null);
+        g.drawImage(e1_bottom,320,450,640,90,null);
+        g.drawImage(e1_right,780,180,180,360,null);
+        g.drawImage(e1_top,320,180,640,90,null);
+        /*g.drawImage(e2_left,480,270,61,180,null);
+        g.drawImage(e2_bottom,480,415,320,35,null);
+        g.drawImage(e2_right,739,270,61,180,null);
+        g.drawImage(e2_top,480,270,320,35,null);*/
+        //g.drawImage(e2_front,541,305,320,180,null);
         //Zeigt das gezeichnette an. Das ist der Trick vom DoubleBuffer, man zeichnet erst alles auf ein
         //unsichtbares Canvas und macht es dann auf einen Schlag sichtbar.
         bs.show();
