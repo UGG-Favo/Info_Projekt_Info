@@ -7,16 +7,21 @@ import java.awt.image.DataBufferInt;
 import javax.imageio.ImageIO;
 import java.util.Timer;
 import java.util.TimerTask;
-
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.awt.event.KeyAdapter;
 
 public class Main extends JFrame { //Wir haben unser Canvas in einem JFrame
     // Anfang Attribute
+    private  int delay=0;
+    private  int standardDelay=10;
+    private boolean isPlayerLocked = false;
     private Canvas canvas1 = new Canvas();
 
     private int xpos;
     static final int frameRate = 60;
 
-
+    static boolean[] keyPressedBool = new boolean[223];
 
 
     private Inventory inv = new Inventory(26);
@@ -151,6 +156,41 @@ public class Main extends JFrame { //Wir haben unser Canvas in einem JFrame
 
 
     public void calculate(){
+        if(delay>0){
+            delay--;
+        }
+        if(delay==0&&isPlayerLocked == false) {
+            if (keyPressedBool[87] == true) { //W -> vorne, Spieler
+
+                delay=standardDelay;
+            }
+            if (keyPressedBool[83] == true) { //S -> unten, Spieler
+
+                delay=standardDelay;
+            }
+            if (keyPressedBool[68] == true) { //D -> rechts, Spieler
+
+                delay=standardDelay;
+            }
+            if (keyPressedBool[65] == true) { //A -> links, Spieler
+
+                delay=standardDelay;
+            }
+
+
+
+        }
+
+    }
+    public void keyPressed (KeyEvent e){
+        keyPressedBool[e.getKeyCode()] = true;
+    }
+
+    public void keyReleased (KeyEvent e){
+        keyPressedBool[e.getKeyCode()] = false;
+    }
+
+    public void keyTyped(KeyEvent e){
 
 
     }
