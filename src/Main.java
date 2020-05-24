@@ -1,17 +1,16 @@
 import java.awt.*;
-import javax.swing.*;
 import java.awt.image.BufferStrategy;
 import java.io.*;
 import java.awt.image.BufferedImage;
-import java.awt.image.DataBufferInt;
 import javax.imageio.ImageIO;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.awt.event.KeyAdapter;
+import javax.swing.JFrame;
 
-public class Main extends JFrame { //Wir haben unser Canvas in einem JFrame
+
+public class Main extends JFrame implements KeyListener{ //Wir haben unser Canvas in einem JFrame
     // Anfang Attribute
     private  int delay=0;
     private  int standardDelay=10;
@@ -25,7 +24,8 @@ public class Main extends JFrame { //Wir haben unser Canvas in einem JFrame
 
 
     private Inventory inv = new Inventory(26);
-
+    private Map map = new Map(10, 10);
+    private Player player = new Player();
 
     private final BufferStrategy bs;                      // braucht man einmal für das ganze Canvas
     private BufferedImage e0_left;
@@ -41,8 +41,7 @@ public class Main extends JFrame { //Wir haben unser Canvas in einem JFrame
     private BufferedImage e2_right;
     private BufferedImage e2_top;
     private BufferedImage e2_front;
-    
-    private Map map;
+
                //Wir machen einen Timer, der 25 Mal/Sekunde tickt, um Bilder zu laden.
     // Ende Attribute
 
@@ -105,7 +104,7 @@ public class Main extends JFrame { //Wir haben unser Canvas in einem JFrame
                 timer();
             }
         }, 0, 1000/frameRate);
-
+        canvas1.addKeyListener(this);
                                                                     // Zum Schluss Timer starten
     } // end of public Main
 
@@ -160,21 +159,41 @@ public class Main extends JFrame { //Wir haben unser Canvas in einem JFrame
             delay--;
         }
         if(delay==0&&isPlayerLocked == false) {
-            if (keyPressedBool[87] == true) { //W -> vorne, Spieler
-
-                delay=standardDelay;
+            if (keyPressedBool[87] == true) { //W -> vorne, Spieler -> Y
+                if(player.getCurrentRoomY()+1<map.getMapHeight()){
+                    if (map.getRooms()[player.getCurrentRoomX()][player.getCurrentRoomY()].isNallowed == true) {
+                        player.setCurrentRoomY(player.getCurrentRoomY() + 1);
+                        delay = standardDelay;
+                        System.out.println(player.getCurrentRoomX()+","+player.getCurrentRoomY());
+                    }
+                }
             }
-            if (keyPressedBool[83] == true) { //S -> unten, Spieler
-
-                delay=standardDelay;
+            if (keyPressedBool[83] == true) { //S -> unten, Spieler -> Y
+                if(player.getCurrentRoomY()-1>=0d) {
+                    if (map.getRooms()[player.getCurrentRoomX()][player.getCurrentRoomY()].isSallowed == true) {
+                        player.setCurrentRoomY(player.getCurrentRoomY() - 1);
+                        delay = standardDelay;
+                        System.out.println(player.getCurrentRoomX()+","+player.getCurrentRoomY());
+                    }
+                }
             }
-            if (keyPressedBool[68] == true) { //D -> rechts, Spieler
-
-                delay=standardDelay;
+            if (keyPressedBool[68] == true) { //D -> rechts, Spieler -> X
+                if(player.getCurrentRoomX()+1<map.getMapWidth()) {
+                    if (map.getRooms()[player.getCurrentRoomX()][player.getCurrentRoomY()].isEallowed == true) {
+                        player.setCurrentRoomX(player.getCurrentRoomX() + 1);
+                        delay = standardDelay;
+                        System.out.println(player.getCurrentRoomX()+","+player.getCurrentRoomY());
+                    }
+                }
             }
-            if (keyPressedBool[65] == true) { //A -> links, Spieler
-
-                delay=standardDelay;
+            if (keyPressedBool[65] == true) { //A -> links, Spieler -> X
+                if(player.getCurrentRoomX()-1>=0) {
+                    if (map.getRooms()[player.getCurrentRoomX()][player.getCurrentRoomY()].isWallowed == true) {
+                        player.setCurrentRoomX(player.getCurrentRoomX() - 1);
+                        delay = standardDelay;
+                        System.out.println(player.getCurrentRoomX()+","+player.getCurrentRoomY());
+                    }
+                }
             }
 
 
