@@ -13,7 +13,7 @@ public class Map {
     
     for (int x=0; x<=mapWidth-1; x++) {
       for (int y=0; y<=mapHeight-1; y++) {
-        rooms[x][y] = new Room(false,false,false,false);
+        rooms[x][y] = new Room(true,false,false,false, false);
       }
     }
   }

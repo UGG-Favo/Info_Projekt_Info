@@ -3,11 +3,13 @@ public class Room {
   boolean isSallowed;
   boolean isEallowed;
   boolean isWallowed;
+  boolean hasItem;
   
-  public Room (boolean n, boolean s, boolean e, boolean w) {
+  public Room (boolean n, boolean s, boolean e, boolean w, boolean hasitem) {
     isNallowed = n;
     isSallowed = s;
     isEallowed = e;
-    isWallowed = w;  
+    isWallowed = w;
+    hasItem = hasitem;
   }
 }
