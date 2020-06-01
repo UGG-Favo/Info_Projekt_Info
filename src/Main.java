@@ -41,6 +41,11 @@ public class Main extends JFrame implements KeyListener{ //Wir haben unser Canva
     private BufferedImage e2_right;
     private BufferedImage e2_top;
     private BufferedImage e2_front;
+    private BufferedImage e0_tunnel_left;
+    private BufferedImage e0_tunnel_right;
+    private BufferedImage e1_tunnel_left;
+    private BufferedImage e1_tunnel_right;
+
 
                //Wir machen einen Timer, der 25 Mal/Sekunde tickt, um Bilder zu laden.
     // Ende Attribute
@@ -89,6 +94,10 @@ public class Main extends JFrame implements KeyListener{ //Wir haben unser Canva
             e1_bottom = ImageIO.read(new File("./images/fertige_bilder/e1_bottom.png"));
             e1_right = ImageIO.read(new File("./images/fertige_bilder/e1_right.png"));
             e1_top = ImageIO.read(new File("./images/fertige_bilder/e1_top.png"));
+            e0_tunnel_left = ImageIO.read(new File("./images/fertige_bilder/e0_front_tunel_left.png"));
+            e0_tunnel_right = ImageIO.read(new File("./images/fertige_bilder/e0_front_tunel_right.png"));
+            e1_tunnel_left = ImageIO.read(new File("./images/fertige_bilder/e1_front_tunel_left.png"));
+            e1_tunnel_right = ImageIO.read(new File("./images/fertige_bilder/e1_front_tunel_right.png"));
             /*e2_left = ImageIO.read(new File("./images/fertige_bilder/e2_left.png"));
             e2_bottom = ImageIO.read(new File("./images/fertige_bilder/e2_bottom.png"));
             e2_right = ImageIO.read(new File("./images/fertige_bilder/e2_right.png"));
@@ -143,6 +152,12 @@ public class Main extends JFrame implements KeyListener{ //Wir haben unser Canva
         g.drawImage(e1_bottom,320,450,640,90,null);
         g.drawImage(e1_right,780,180,180,360,null);
         g.drawImage(e1_top,320,180,640,90,null);
+        if (map.getRooms()[player.getCurrentRoomX()][player.getCurrentRoomY()].isEallowed == true){
+            g.drawImage(e1_tunnel_right,500,270,320,181,null);
+        }
+        if (map.getRooms()[player.getCurrentRoomX()][player.getCurrentRoomY()].isWallowed == true){
+            g.drawImage(e1_tunnel_left,500,270,320,181,null);
+        }
         /*g.drawImage(e2_left,480,270,61,180,null);
         g.drawImage(e2_bottom,480,415,320,35,null);
         g.drawImage(e2_right,739,270,61,180,null);
