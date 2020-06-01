@@ -176,11 +176,23 @@ public class Main extends JFrame implements KeyListener{ //Wir haben unser Canva
                 g.drawImage(e1_tunnel_right, 500, 270, 320, 181, null);
             }
             //------------------------------
-            /*g.drawImage(e2_left,480,270,61,180,null);
+            //e2----------------------------
+            g.drawImage(e2_top,480,270,320,35,null);
             g.drawImage(e2_bottom,480,415,320,35,null);
-            g.drawImage(e2_right,739,270,61,180,null);
-            g.drawImage(e2_top,480,270,320,35,null);*/
-            //g.drawImage(e2_front,541,305,320,180,null);
+            if (map.getRooms()[player.getCurrentRoomX()][player.getCurrentRoomY() + 2].isWallowed == false) {
+                g.drawImage(e2_left, 780, 180, 180, 360, null);
+            }else{
+                //g.drawImage(e2_tunnel_left, 500, 270, 320, 181, null);
+            }
+
+            if (map.getRooms()[player.getCurrentRoomX()][player.getCurrentRoomY() + 2].isEallowed == false) {
+                g.drawImage(e2_right, 780, 180, 180, 360, null);
+            }else{
+                //g.drawImage(e2_tunnel_right, 500, 270, 320, 181, null);
+            }
+
+            g.drawImage(e2_front,541,305,320,180,null);
+            //------------------------------
         }else if(degree==90) {
             //e0----------------------------
             g.drawImage(e0_bottom, 0, 540, 1280, 180, null);
@@ -215,10 +227,10 @@ public class Main extends JFrame implements KeyListener{ //Wir haben unser Canva
             //e2----------------------------
             g.drawImage(e2_top,480,270,320,35,null);
             g.drawImage(e2_bottom,480,415,320,35,null);
-            if (map.getRooms()[player.getCurrentRoomX()][player.getCurrentRoomY() + 2].isSallowed == false) {
-                g.drawImage(e2_right, 780, 180, 180, 360, null);
+            if (map.getRooms()[player.getCurrentRoomX()][player.getCurrentRoomY() + 2].isNallowed == false) {
+                g.drawImage(e2_left, 780, 180, 180, 360, null);
             }else{
-                //g.drawImage(e2_tunnel_right, 500, 270, 320, 181, null);
+                //g.drawImage(e2_tunnel_left, 500, 270, 320, 181, null);
             }
 
             if (map.getRooms()[player.getCurrentRoomX()][player.getCurrentRoomY() + 2].isSallowed == false) {
@@ -226,6 +238,102 @@ public class Main extends JFrame implements KeyListener{ //Wir haben unser Canva
             }else {
                 //g.drawImage(e2_tunnel_right, 500, 270, 320, 181, null);
             }
+            g.drawImage(e2_front,541,305,320,180,null);
+            //------------------------------
+        }if(degree==180) {
+            //e0----------------------------
+            g.drawImage(e0_bottom, 0, 540, 1280, 180, null);
+            g.drawImage(e0_top, 0, 0, 1280, 180, null);
+            if (map.getRooms()[player.getCurrentRoomX()][player.getCurrentRoomY()].isEallowed == false) {
+                g.drawImage(e0_left, 0, 0, 320, 720, null);
+            } else {
+                //tunnel
+            }
+
+
+            if (map.getRooms()[player.getCurrentRoomX()][player.getCurrentRoomY()].isWallowed == false) {
+                g.drawImage(e0_right, 960, 0, 320, 720, null);
+            } else {
+                //tunnel
+            }
+            //------------------------------
+            //e1----------------------------
+            g.drawImage(e1_top, 320, 180, 640, 90, null);
+            g.drawImage(e1_bottom, 320, 450, 640, 90, null);
+            if (map.getRooms()[player.getCurrentRoomX()][player.getCurrentRoomY() + 1].isEallowed == false) {
+                g.drawImage(e1_left, 320, 180, 180, 360, null);
+            } else {
+                g.drawImage(e1_tunnel_left, 500, 270, 320, 181, null);
+            }
+            if (map.getRooms()[player.getCurrentRoomX()][player.getCurrentRoomY() + 1].isWallowed == false) {
+                g.drawImage(e1_right, 780, 180, 180, 360, null);
+            }else{
+                g.drawImage(e1_tunnel_right, 500, 270, 320, 181, null);
+            }
+            //------------------------------
+            //e2----------------------------
+            g.drawImage(e2_top,480,270,320,35,null);
+            g.drawImage(e2_bottom,480,415,320,35,null);
+            if (map.getRooms()[player.getCurrentRoomX()][player.getCurrentRoomY() + 2].isEallowed == false) {
+                g.drawImage(e2_left, 780, 180, 180, 360, null);
+            }else{
+                //g.drawImage(e2_tunnel_right, 500, 270, 320, 181, null);
+            }
+
+            if (map.getRooms()[player.getCurrentRoomX()][player.getCurrentRoomY() + 2].isWallowed == false) {
+                g.drawImage(e2_right, 780, 180, 180, 360, null);
+            }else{
+                //g.drawImage(e2_tunnel_right, 500, 270, 320, 181, null);
+            }
+
+            g.drawImage(e2_front,541,305,320,180,null);
+            //------------------------------
+        }else if(degree==270) {
+            //e0----------------------------
+            g.drawImage(e0_bottom, 0, 540, 1280, 180, null);
+            g.drawImage(e0_top, 0, 0, 1280, 180, null);
+            if (map.getRooms()[player.getCurrentRoomX()][player.getCurrentRoomY()].isSallowed == false) {
+                g.drawImage(e0_left, 0, 0, 320, 720, null);
+            } else {
+                //tunnel
+            }
+
+
+            if (map.getRooms()[player.getCurrentRoomX()][player.getCurrentRoomY()].isNallowed == false) {
+                g.drawImage(e0_right, 960, 0, 320, 720, null);
+            } else {
+                //tunnel
+            }
+            //------------------------------
+            //e1----------------------------
+            g.drawImage(e1_top, 320, 180, 640, 90, null);
+            g.drawImage(e1_bottom, 320, 450, 640, 90, null);
+            if (map.getRooms()[player.getCurrentRoomX()][player.getCurrentRoomY() + 1].isSallowed == false) {
+                g.drawImage(e1_left, 320, 180, 180, 360, null);
+            } else {
+                g.drawImage(e1_tunnel_left, 500, 270, 320, 181, null);
+            }
+            if (map.getRooms()[player.getCurrentRoomX()][player.getCurrentRoomY() + 1].isNallowed == false) {
+                g.drawImage(e1_right, 780, 180, 180, 360, null);
+            }else{
+                g.drawImage(e1_tunnel_right, 500, 270, 320, 181, null);
+            }
+            //------------------------------
+            //e2----------------------------
+            g.drawImage(e2_top,480,270,320,35,null);
+            g.drawImage(e2_bottom,480,415,320,35,null);
+            if (map.getRooms()[player.getCurrentRoomX()][player.getCurrentRoomY() + 2].isSallowed == false) {
+                g.drawImage(e2_left, 780, 180, 180, 360, null);
+            }else{
+                //g.drawImage(e2_tunnel_left, 500, 270, 320, 181, null);
+            }
+
+            if (map.getRooms()[player.getCurrentRoomX()][player.getCurrentRoomY() + 2].isNallowed == false) {
+                g.drawImage(e2_right, 780, 180, 180, 360, null);
+            }else{
+                //g.drawImage(e2_tunnel_right, 500, 270, 320, 181, null);
+            }
+
             g.drawImage(e2_front,541,305,320,180,null);
             //------------------------------
         }
@@ -270,7 +378,7 @@ public class Main extends JFrame implements KeyListener{ //Wir haben unser Canva
                     degree=0;
                 }
                 delay=standardDelay;
-                //System.out.println("rechts "+degree);
+                System.out.println("rechts "+degree);
             }
             if (keyPressedBool[65] == true) { //A -> nach links drehen
                 if(degree==0){
@@ -283,7 +391,7 @@ public class Main extends JFrame implements KeyListener{ //Wir haben unser Canva
                     degree=0;
                 }
                 delay=standardDelay;
-                //System.out.println("links "+degree);
+                System.out.println("links "+degree);
             }
 
 
