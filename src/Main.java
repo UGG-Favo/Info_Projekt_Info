@@ -14,7 +14,7 @@ public class Main extends JFrame implements KeyListener{ //Wir haben unser Canva
     // Anfang Attribute
     private  int delay=0;
     private  int standardDelay=10;
-    private boolean isPlayerLocked = false;
+    private boolean isPlayerLocked = false; //für kämpfe und ähnliches
     private Canvas canvas1 = new Canvas();
     private int degree=0;
     private int xpos;
@@ -145,6 +145,7 @@ public class Main extends JFrame implements KeyListener{ //Wir haben unser Canva
         g.clearRect(0,0, canvas1.getWidth(), canvas1.getHeight());
 
         //Zeichnet Bild
+
         if(degree==0) {
             //e0----------------------------
             g.drawImage(e0_bottom, 0, 540, 1280, 180, null);
@@ -388,6 +389,9 @@ public class Main extends JFrame implements KeyListener{ //Wir haben unser Canva
         if(delay>0){
             delay--;
         }
+        //if(map.getRooms()[player.getCurrentRoomX()][player.getCurrentRoomY()].hasMonster) //kämpfen
+
+        //laufen und drehen
         if(delay==0&&isPlayerLocked == false) {
             if (keyPressedBool[87] == true) { //W -> vorne, Spieler -> Y
                 if(player.getCurrentRoomY()+1<map.getMapHeight()){
