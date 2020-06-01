@@ -70,22 +70,22 @@
       <screen x="109" y="0" width="1811" height="1080" />
     </state>
     <state x="819" y="223" key="#com.intellij.ide.util.MemberChooser/109.0.1811.1080/1982.484.1858.1080/3902.26.1618.1050@109.0.1811.1080" timestamp="1590327578985" />
-    <state width="1768" height="119" key="GridCell.Tab.0.bottom" timestamp="1591011647975">
+    <state width="1768" height="119" key="GridCell.Tab.0.bottom" timestamp="1591012295477">
       <screen x="109" y="0" width="1811" height="1080" />
     </state>
-    <state width="1768" height="119" key="GridCell.Tab.0.bottom/109.0.1811.1080/1982.484.1858.1080/3902.26.1618.1050@109.0.1811.1080" timestamp="1591011647975" />
-    <state width="1768" height="119" key="GridCell.Tab.0.center" timestamp="1591011647974">
+    <state width="1768" height="119" key="GridCell.Tab.0.bottom/109.0.1811.1080/1982.484.1858.1080/3902.26.1618.1050@109.0.1811.1080" timestamp="1591012295477" />
+    <state width="1768" height="119" key="GridCell.Tab.0.center" timestamp="1591012295476">
       <screen x="109" y="0" width="1811" height="1080" />
     </state>
-    <state width="1768" height="119" key="GridCell.Tab.0.center/109.0.1811.1080/1982.484.1858.1080/3902.26.1618.1050@109.0.1811.1080" timestamp="1591011647974" />
-    <state width="1768" height="119" key="GridCell.Tab.0.left" timestamp="1591011647973">
+    <state width="1768" height="119" key="GridCell.Tab.0.center/109.0.1811.1080/1982.484.1858.1080/3902.26.1618.1050@109.0.1811.1080" timestamp="1591012295476" />
+    <state width="1768" height="119" key="GridCell.Tab.0.left" timestamp="1591012295476">
       <screen x="109" y="0" width="1811" height="1080" />
     </state>
-    <state width="1768" height="119" key="GridCell.Tab.0.left/109.0.1811.1080/1982.484.1858.1080/3902.26.1618.1050@109.0.1811.1080" timestamp="1591011647973" />
-    <state width="1768" height="119" key="GridCell.Tab.0.right" timestamp="1591011647974">
+    <state width="1768" height="119" key="GridCell.Tab.0.left/109.0.1811.1080/1982.484.1858.1080/3902.26.1618.1050@109.0.1811.1080" timestamp="1591012295476" />
+    <state width="1768" height="119" key="GridCell.Tab.0.right" timestamp="1591012295477">
       <screen x="109" y="0" width="1811" height="1080" />
     </state>
-    <state width="1768" height="119" key="GridCell.Tab.0.right/109.0.1811.1080/1982.484.1858.1080/3902.26.1618.1050@109.0.1811.1080" timestamp="1591011647974" />
+    <state width="1768" height="119" key="GridCell.Tab.0.right/109.0.1811.1080/1982.484.1858.1080/3902.26.1618.1050@109.0.1811.1080" timestamp="1591012295477" />
     <state width="1768" height="364" key="GridCell.Tab.1.bottom" timestamp="1590148421818">
       <screen x="109" y="0" width="1811" height="1080" />
     </state>
@@ -102,10 +102,10 @@
       <screen x="109" y="0" width="1811" height="1080" />
     </state>
     <state width="1768" height="364" key="GridCell.Tab.1.right/109.0.1811.1080/1982.484.1858.1080/3902.26.1618.1050@109.0.1811.1080" timestamp="1590148421818" />
-    <state x="823" y="456" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591010027170">
+    <state x="823" y="456" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591012055290">
       <screen x="109" y="0" width="1811" height="1080" />
     </state>
-    <state x="823" y="456" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/109.0.1811.1080/1982.484.1858.1080/3902.26.1618.1050@109.0.1811.1080" timestamp="1591010027170" />
+    <state x="823" y="456" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/109.0.1811.1080/1982.484.1858.1080/3902.26.1618.1050@109.0.1811.1080" timestamp="1591012055290" />
     <state x="671" y="250" key="run.anything.popup" timestamp="1590145520965">
       <screen x="109" y="0" width="1811" height="1080" />
     </state>
@@ -124,5 +124,8 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Java_Projekt_Info$Main.ic" NAME="Main Coverage Results" MODIFIED="1591012056296" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
