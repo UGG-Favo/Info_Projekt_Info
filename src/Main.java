@@ -230,6 +230,22 @@ public class Main extends JFrame implements KeyListener{ //Wir haben unser Canva
 
     }
     public void setUpMap(){
+        map.getRooms()[0][0] =new Room(true,false,false,false,false);
+        map.getRooms()[0][1] =new Room(true,true,false,true,false);
+        map.getRooms()[0][2] =new Room(true,true,false,false,false);
+        map.getRooms()[0][3] =new Room(false,true,false,true,false);
+        map.getRooms()[1][0] =new Room(false,false,false,true,false);
+        map.getRooms()[1][1] =new Room(false,false,true,false,false);
+        map.getRooms()[1][2] =new Room(false,false,false,true,false);
+        map.getRooms()[1][3] =new Room(false,false,true,true,false);
+        map.getRooms()[2][0] =new Room(true,false,true,true,false);
+        map.getRooms()[2][1] =new Room(true,true,false,true,false);
+        map.getRooms()[2][2] =new Room(true,true,true,false,false);
+        map.getRooms()[2][3] =new Room(false,true,true,false,false);
+        map.getRooms()[3][0] =new Room(false,false,true,false,false);
+        map.getRooms()[3][1] =new Room(true,false,true,false,false);
+        map.getRooms()[3][2] =new Room(true,true,false,false,false);
+        map.getRooms()[3][3] =new Room(false,false,false,false,false);
 
     }
 
