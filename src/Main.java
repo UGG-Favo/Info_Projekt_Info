@@ -16,7 +16,7 @@ public class Main extends JFrame implements KeyListener{ //Wir haben unser Canva
     private  int standardDelay=10;
     private boolean isPlayerLocked = false;
     private Canvas canvas1 = new Canvas();
-
+    private int degree=0;
     private int xpos;
     static final int frameRate = 60;
 
@@ -145,26 +145,199 @@ public class Main extends JFrame implements KeyListener{ //Wir haben unser Canva
         g.clearRect(0,0, canvas1.getWidth(), canvas1.getHeight());
 
         //Zeichnet Bild
+        if(degree==0) {
+            //e0----------------------------
+            g.drawImage(e0_bottom, 0, 540, 1280, 180, null);
+            g.drawImage(e0_top, 0, 0, 1280, 180, null);
+            if (map.getRooms()[player.getCurrentRoomX()][player.getCurrentRoomY()].isWallowed == false) {
+                g.drawImage(e0_left, 0, 0, 320, 720, null);
+            } else {
+                //tunnel
+            }
 
-        g.drawImage(e0_left,0,0,320,720, null);
-        g.drawImage(e0_bottom,0,540,1280,180, null);
-        g.drawImage(e0_right,960,0,320,720, null);
-        g.drawImage(e0_top,0,0,1280,180, null);
-        g.drawImage(e1_left,320,180,180,360,null);
-        g.drawImage(e1_bottom,320,450,640,90,null);
-        g.drawImage(e1_right,780,180,180,360,null);
-        g.drawImage(e1_top,320,180,640,90,null);
-        if (map.getRooms()[player.getCurrentRoomX()][player.getCurrentRoomY()].isEallowed == true){
-            g.drawImage(e1_tunnel_right,500,270,320,181,null);
+
+            if (map.getRooms()[player.getCurrentRoomX()][player.getCurrentRoomY()].isEallowed == false) {
+                g.drawImage(e0_right, 960, 0, 320, 720, null);
+            } else {
+                //tunnel
+            }
+            //------------------------------
+            //e1----------------------------
+            g.drawImage(e1_top, 320, 180, 640, 90, null);
+            g.drawImage(e1_bottom, 320, 450, 640, 90, null);
+            if (map.getRooms()[player.getCurrentRoomX()][player.getCurrentRoomY() + 1].isWallowed == false) {
+                g.drawImage(e1_left, 320, 180, 180, 360, null);
+            } else {
+                g.drawImage(e1_tunnel_left, 500, 270, 320, 181, null);
+            }
+            if (map.getRooms()[player.getCurrentRoomX()][player.getCurrentRoomY() + 1].isEallowed == false) {
+                g.drawImage(e1_right, 780, 180, 180, 360, null);
+            }else{
+                g.drawImage(e1_tunnel_right, 500, 270, 320, 181, null);
+            }
+            //------------------------------
+            //e2----------------------------
+            g.drawImage(e2_top,480,270,320,35,null);
+            g.drawImage(e2_bottom,480,415,320,35,null);
+            if (map.getRooms()[player.getCurrentRoomX()][player.getCurrentRoomY() + 2].isWallowed == false) {
+                g.drawImage(e2_left, 780, 180, 180, 360, null);
+            }else{
+                //g.drawImage(e2_tunnel_left, 500, 270, 320, 181, null);
+            }
+
+            if (map.getRooms()[player.getCurrentRoomX()][player.getCurrentRoomY() + 2].isEallowed == false) {
+                g.drawImage(e2_right, 780, 180, 180, 360, null);
+            }else{
+                //g.drawImage(e2_tunnel_right, 500, 270, 320, 181, null);
+            }
+
+            g.drawImage(e2_front,541,305,320,180,null);
+            //------------------------------
+        }else if(degree==90) {
+            //e0----------------------------
+            g.drawImage(e0_bottom, 0, 540, 1280, 180, null);
+            g.drawImage(e0_top, 0, 0, 1280, 180, null);
+            if (map.getRooms()[player.getCurrentRoomX()][player.getCurrentRoomY()].isNallowed == false) {
+                g.drawImage(e0_left, 0, 0, 320, 720, null);
+            } else {
+                //tunnel
+            }
+
+
+            if (map.getRooms()[player.getCurrentRoomX()][player.getCurrentRoomY()].isSallowed == false) {
+                g.drawImage(e0_right, 960, 0, 320, 720, null);
+            } else {
+                //tunnel
+            }
+            //------------------------------
+            //e1----------------------------
+            g.drawImage(e1_top, 320, 180, 640, 90, null);
+            g.drawImage(e1_bottom, 320, 450, 640, 90, null);
+            if (map.getRooms()[player.getCurrentRoomX()][player.getCurrentRoomY() + 1].isNallowed == false) {
+                g.drawImage(e1_left, 320, 180, 180, 360, null);
+            } else {
+                g.drawImage(e1_tunnel_left, 500, 270, 320, 181, null);
+            }
+            if (map.getRooms()[player.getCurrentRoomX()][player.getCurrentRoomY() + 1].isSallowed == false) {
+                g.drawImage(e1_right, 780, 180, 180, 360, null);
+            }else{
+                g.drawImage(e1_tunnel_right, 500, 270, 320, 181, null);
+            }
+            //------------------------------
+            //e2----------------------------
+            g.drawImage(e2_top,480,270,320,35,null);
+            g.drawImage(e2_bottom,480,415,320,35,null);
+            if (map.getRooms()[player.getCurrentRoomX()][player.getCurrentRoomY() + 2].isNallowed == false) {
+                g.drawImage(e2_left, 780, 180, 180, 360, null);
+            }else{
+                //g.drawImage(e2_tunnel_left, 500, 270, 320, 181, null);
+            }
+
+            if (map.getRooms()[player.getCurrentRoomX()][player.getCurrentRoomY() + 2].isSallowed == false) {
+                g.drawImage(e2_right, 780, 180, 180, 360, null);
+            }else {
+                //g.drawImage(e2_tunnel_right, 500, 270, 320, 181, null);
+            }
+            g.drawImage(e2_front,541,305,320,180,null);
+            //------------------------------
+        }if(degree==180) {
+            //e0----------------------------
+            g.drawImage(e0_bottom, 0, 540, 1280, 180, null);
+            g.drawImage(e0_top, 0, 0, 1280, 180, null);
+            if (map.getRooms()[player.getCurrentRoomX()][player.getCurrentRoomY()].isEallowed == false) {
+                g.drawImage(e0_left, 0, 0, 320, 720, null);
+            } else {
+                //tunnel
+            }
+
+
+            if (map.getRooms()[player.getCurrentRoomX()][player.getCurrentRoomY()].isWallowed == false) {
+                g.drawImage(e0_right, 960, 0, 320, 720, null);
+            } else {
+                //tunnel
+            }
+            //------------------------------
+            //e1----------------------------
+            g.drawImage(e1_top, 320, 180, 640, 90, null);
+            g.drawImage(e1_bottom, 320, 450, 640, 90, null);
+            if (map.getRooms()[player.getCurrentRoomX()][player.getCurrentRoomY() + 1].isEallowed == false) {
+                g.drawImage(e1_left, 320, 180, 180, 360, null);
+            } else {
+                g.drawImage(e1_tunnel_left, 500, 270, 320, 181, null);
+            }
+            if (map.getRooms()[player.getCurrentRoomX()][player.getCurrentRoomY() + 1].isWallowed == false) {
+                g.drawImage(e1_right, 780, 180, 180, 360, null);
+            }else{
+                g.drawImage(e1_tunnel_right, 500, 270, 320, 181, null);
+            }
+            //------------------------------
+            //e2----------------------------
+            g.drawImage(e2_top,480,270,320,35,null);
+            g.drawImage(e2_bottom,480,415,320,35,null);
+            if (map.getRooms()[player.getCurrentRoomX()][player.getCurrentRoomY() + 2].isEallowed == false) {
+                g.drawImage(e2_left, 780, 180, 180, 360, null);
+            }else{
+                //g.drawImage(e2_tunnel_right, 500, 270, 320, 181, null);
+            }
+
+            if (map.getRooms()[player.getCurrentRoomX()][player.getCurrentRoomY() + 2].isWallowed == false) {
+                g.drawImage(e2_right, 780, 180, 180, 360, null);
+            }else{
+                //g.drawImage(e2_tunnel_right, 500, 270, 320, 181, null);
+            }
+
+            g.drawImage(e2_front,541,305,320,180,null);
+            //------------------------------
+        }else if(degree==270) {
+            //e0----------------------------
+            g.drawImage(e0_bottom, 0, 540, 1280, 180, null);
+            g.drawImage(e0_top, 0, 0, 1280, 180, null);
+            if (map.getRooms()[player.getCurrentRoomX()][player.getCurrentRoomY()].isSallowed == false) {
+                g.drawImage(e0_left, 0, 0, 320, 720, null);
+            } else {
+                //tunnel
+            }
+
+
+            if (map.getRooms()[player.getCurrentRoomX()][player.getCurrentRoomY()].isNallowed == false) {
+                g.drawImage(e0_right, 960, 0, 320, 720, null);
+            } else {
+                //tunnel
+            }
+            //------------------------------
+            //e1----------------------------
+            g.drawImage(e1_top, 320, 180, 640, 90, null);
+            g.drawImage(e1_bottom, 320, 450, 640, 90, null);
+            if (map.getRooms()[player.getCurrentRoomX()][player.getCurrentRoomY() + 1].isSallowed == false) {
+                g.drawImage(e1_left, 320, 180, 180, 360, null);
+            } else {
+                g.drawImage(e1_tunnel_left, 500, 270, 320, 181, null);
+            }
+            if (map.getRooms()[player.getCurrentRoomX()][player.getCurrentRoomY() + 1].isNallowed == false) {
+                g.drawImage(e1_right, 780, 180, 180, 360, null);
+            }else{
+                g.drawImage(e1_tunnel_right, 500, 270, 320, 181, null);
+            }
+            //------------------------------
+            //e2----------------------------
+            g.drawImage(e2_top,480,270,320,35,null);
+            g.drawImage(e2_bottom,480,415,320,35,null);
+            if (map.getRooms()[player.getCurrentRoomX()][player.getCurrentRoomY() + 2].isSallowed == false) {
+                g.drawImage(e2_left, 780, 180, 180, 360, null);
+            }else{
+                //g.drawImage(e2_tunnel_left, 500, 270, 320, 181, null);
+            }
+
+            if (map.getRooms()[player.getCurrentRoomX()][player.getCurrentRoomY() + 2].isNallowed == false) {
+                g.drawImage(e2_right, 780, 180, 180, 360, null);
+            }else{
+                //g.drawImage(e2_tunnel_right, 500, 270, 320, 181, null);
+            }
+
+            g.drawImage(e2_front,541,305,320,180,null);
+            //------------------------------
         }
-        if (map.getRooms()[player.getCurrentRoomX()][player.getCurrentRoomY()].isWallowed == true){
-            g.drawImage(e1_tunnel_left,500,270,320,181,null);
-        }
-        /*g.drawImage(e2_left,480,270,61,180,null);
-        g.drawImage(e2_bottom,480,415,320,35,null);
-        g.drawImage(e2_right,739,270,61,180,null);
-        g.drawImage(e2_top,480,270,320,35,null);*/
-        //g.drawImage(e2_front,541,305,320,180,null);
+
         //Zeigt das gezeichnette an. Das ist der Trick vom DoubleBuffer, man zeichnet erst alles auf ein
         //unsichtbares Canvas und macht es dann auf einen Schlag sichtbar.
         bs.show();
@@ -194,25 +367,32 @@ public class Main extends JFrame implements KeyListener{ //Wir haben unser Canva
                     }
                 }
             }
-            if (keyPressedBool[68] == true) { //D -> rechts, Spieler -> X
-                if(player.getCurrentRoomX()+1<map.getMapWidth()) {
-                    if (map.getRooms()[player.getCurrentRoomX()][player.getCurrentRoomY()].isEallowed == true) {
-                        player.setCurrentRoomX(player.getCurrentRoomX() + 1);
-                        delay = standardDelay;
-                        System.out.println(player.getCurrentRoomX()+","+player.getCurrentRoomY());
-                    }
+            if (keyPressedBool[68] == true) { //D -> nach rechts drehen
+                if(degree==0){
+                    degree=90;
+                }else if(degree==90){
+                    degree=180;
+                }else if(degree==180){
+                    degree=270;
+                }else if(degree==270){
+                    degree=0;
                 }
+                delay=standardDelay;
+                System.out.println("rechts "+degree);
             }
-            if (keyPressedBool[65] == true) { //A -> links, Spieler -> X
-                if(player.getCurrentRoomX()-1>=0) {
-                    if (map.getRooms()[player.getCurrentRoomX()][player.getCurrentRoomY()].isWallowed == true) {
-                        player.setCurrentRoomX(player.getCurrentRoomX() - 1);
-                        delay = standardDelay;
-                        System.out.println(player.getCurrentRoomX()+","+player.getCurrentRoomY());
-                    }
+            if (keyPressedBool[65] == true) { //A -> nach links drehen
+                if(degree==0){
+                    degree=270;
+                }else if(degree==270){
+                    degree=180;
+                }else if(degree==180){
+                    degree=90;
+                }else if(degree==90){
+                    degree=0;
                 }
+                delay=standardDelay;
+                System.out.println("links "+degree);
             }
-
 
 
         }
