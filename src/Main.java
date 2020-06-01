@@ -51,12 +51,14 @@ public class Main extends JFrame implements KeyListener{ //Wir haben unser Canva
     // Ende Attribute
 
 
-    public Main(String title) {                                       // Konstruktor
+    public Main(String title) {
+
+        // Konstruktor
         //Das ist alles Standard-JFrame-Zeugs
         super(title);
         int frameWidth = 1280;
         int frameHeight = 720;
-        
+        setUpMap();
         setSize(frameWidth, frameHeight);
         setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -122,7 +124,7 @@ public class Main extends JFrame implements KeyListener{ //Wir haben unser Canva
     public static void main(String[] args) {
         new Main("The Game");                                   // Legt ein Objekt von sicher selber an,
         //also ein sichtbares Fenster
-        //public itm1 =new Item;
+
 
 
 
@@ -226,6 +228,8 @@ public class Main extends JFrame implements KeyListener{ //Wir haben unser Canva
 
     public void keyTyped(KeyEvent e){
 
+    }
+    public void setUpMap(){
 
     }
 
