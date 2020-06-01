@@ -4,6 +4,9 @@ public class Room {
   boolean isEallowed;
   boolean isWallowed;
   boolean hasItem;
+  Consumables cons;
+  Weapon weapon;
+  Armor armor;
   
   public Room (boolean n, boolean s, boolean e, boolean w, boolean hasitem) {
     isNallowed = n;
@@ -11,6 +14,30 @@ public class Room {
     isEallowed = e;
     isWallowed = w;
     hasItem = hasitem;
+  }
+  public Room (boolean n, boolean s, boolean e, boolean w, boolean hasitem,Consumables con) {
+    isNallowed = n;
+    isSallowed = s;
+    isEallowed = e;
+    isWallowed = w;
+    hasItem = hasitem;
+    cons = con;
+  }
+  public Room (boolean n, boolean s, boolean e, boolean w, boolean hasitem, Weapon wea) {
+    isNallowed = n;
+    isSallowed = s;
+    isEallowed = e;
+    isWallowed = w;
+    hasItem = hasitem;
+    weapon = wea;
+  }
+  public Room (boolean n, boolean s, boolean e, boolean w, boolean hasitem, Armor arm) {
+    isNallowed = n;
+    isSallowed = s;
+    isEallowed = e;
+    isWallowed = w;
+    hasItem = hasitem;
+    armor = arm;
   }
 
   public boolean isNallowed() {
